@@ -1,16 +1,59 @@
-# ny_times_task
+# NY Times Most Popular Articles App
 
-A new Flutter project.
+A simple Flutter app that fetches and displays the most popular articles from the New York Times API. Built using **Clean Architecture**, this app follows best practices for maintainability and scalability.
 
-## Getting Started
+## Screenshots:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4f189c5d-4b85-45c4-90c4-3c672a5ec783" width="250">
+  <img src="https://github.com/user-attachments/assets/741ce920-f67f-4e52-a7dc-afad149cb642" width="250">
+</p>
 
-This project is a starting point for a Flutter application.
+## Features:
+- Fetch and display the most popular NY Times articles.
+- View article details when tapped.
+- Smooth UI with caching and shimmer loading effects.
+- Implements Clean Architecture principles.
+- Uses Dio for efficient API calls.
+- Responsive UI using flutter_screenutil.
 
-A few resources to get you started if this is your first Flutter project:
+## API Information:
+This app utilizes the **NY Times Most Popular Articles API**. To get started, sign up for an API key at [NY Times Developer Portal](https://developer.nytimes.com/get-started).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+API Endpoint:
+(https://api.nytimes.com/svc/mostpopular/v2/viewed/)?api-key=""
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies:
+This project uses the following Flutter packages:
+
+```yaml
+flutter_screenutil: ^5.9.3
+dio: ^5.0.0
+provider: ^6.0.5
+cached_network_image: ^3.4.1
+shimmer: ^3.0.0
+bounce: ^1.0.2
+
+Project Structure:
+
+lib:
+    main.dart
+     utils:
+        networking:
+            dio_client.dart
+            api_constants.dart
+      data:
+       models:
+          article_model.dart
+        repositories:
+           articles_repository.dart
+     presentation:
+         providers:
+            articles_provider.dart
+         screens:
+            articles_details_screen.dart
+            articles_list_screen.dart
+         widgets:
+            article_item.dart
+            article_shimmer.dart
+            build_custome_appbar.dart
+
