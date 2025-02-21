@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:ny_times_task/utils/networking/api_constants.dart';
 
 class DioClient {
   final Dio _dio;
 
   DioClient()
       : _dio = Dio(BaseOptions(
-    baseUrl: "https://api.nytimes.com/svc/mostpopular/v2/viewed/",
+    baseUrl: ApiConstants.apiBaseUrl,
     connectTimeout: const Duration(seconds: 10),
     receiveTimeout: const Duration(seconds: 10),
   )) {
